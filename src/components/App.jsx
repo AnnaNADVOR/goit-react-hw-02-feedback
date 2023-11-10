@@ -36,9 +36,8 @@ class App extends Component {
   }
 
   countPositivePercentage() {
-    let percent = 0; 
-    percent = Math.round(this.state.good * 100 / this.countTotalFeedback());  
-    return percent;
+      return Math.round(this.state.good * 100 / this.countTotalFeedback());  
+   
   }
 
   render() {
