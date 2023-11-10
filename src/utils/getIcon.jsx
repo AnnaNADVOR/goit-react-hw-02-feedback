@@ -13,7 +13,9 @@ function getIconByType(type) {
         
         case "bad":
            return <BsFillEmojiFrownFill color="red" size={iconSize.medium}/>;
-           
+      
+       default:
+          return;
     }
  
 }
