@@ -1,9 +1,9 @@
 import { Component } from "react";
 
-import Section from "./Feedback/Section";
-import Statistics from "./Feedback/Statistics";
-import FeedbackOptions from "./Feedback/FeedbackOptions";
-import Notification from "./Notification";
+import Section from "./Feedback/Section/Section";
+import Statistics from "./Feedback/Statistics/Statistics";
+import FeedbackOptions from "./Feedback/FeedbackOptions/FeedbackOptions";
+import Notification from "./Feedback/Notification/Notification";
 
 
 class App extends Component {
@@ -15,9 +15,9 @@ class App extends Component {
   }
   
   onLeaveFeedback = (event) => {
-    let option = event.target.id;
-    
-    this.setState((prevState) => {
+    let option = event.currentTarget.id;
+ 
+   this.setState((prevState) => {
       return {
         [option]: prevState[option] + 1,
       };
@@ -36,14 +36,15 @@ class App extends Component {
   }
 
   countPositivePercentage() {
-      return Math.round(this.state.good * 100 / this.countTotalFeedback());  
+    return Math.round(this.state.good * 100 / this.countTotalFeedback()) || 0;  
    
   }
 
   render() {
+    
     return (
-      <div
-      style={{
+      <div>
+      {/* style={{
         height: '100vh',
         display: 'flex',
         flexDirection: 'column',
@@ -51,16 +52,16 @@ class App extends Component {
         alignItems: 'center',
         fontSize: 40,
         color: '#010101'
-      }}>
+      }}> */}
        
       <Section title="Please Leave Feedback">
           <FeedbackOptions
             options={Object.keys(this.state)}
             onLeaveFeedback={this.onLeaveFeedback}
           />            
-      </Section>
+      </Section> 
         <Section title="Statistics">
-            {this.countTotalFeedback() > 0 ? (
+          {this.countTotalFeedback() > 0 ? (
             <Statistics
             total={this.countTotalFeedback()}
             good={this.state.good}
