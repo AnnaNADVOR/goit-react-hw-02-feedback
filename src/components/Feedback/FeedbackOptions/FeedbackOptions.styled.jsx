@@ -18,6 +18,7 @@ export const Button = styled.button `
   
   &:hover {
     transform: scale(1.2);
+    cursor: pointer;
   }
 `
 export const ButtonItem = styled.li`
