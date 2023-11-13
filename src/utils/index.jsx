@@ -1,1 +1,1 @@
-export {default} from './getIcon';
+export {default} from './getIconByType';

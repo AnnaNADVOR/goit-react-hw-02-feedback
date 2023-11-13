@@ -1,9 +1,11 @@
-function Section ({title, children}) {
+import {SectionContainer, SectionTitle } from "./Section.styled";
+
+function Section({ title, children }) {
     return (
-        <section>
-            <h1>{title}</h1>
+        <SectionContainer>
+            <SectionTitle>{title}</SectionTitle>
             {children}
-        </section> 
+        </SectionContainer> 
     )      
 }
 

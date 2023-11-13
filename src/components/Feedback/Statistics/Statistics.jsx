@@ -1,12 +1,14 @@
+import { StatisticContainer, Rating, RatingValue } from "./Statictics.styled";
+
 function Statistics({ good, neutral, bad, total, percentage }) {
     return (
-        <div>
-            <p>Good: {good}</p>
-            <p>Neutral: {neutral}</p>
-            <p>Bad: {bad}</p>
-            <p>Total: {total}</p>
-            <p>Positive feedback: {percentage}%</p>            
-       </div>
+        <StatisticContainer>
+            <Rating>Good: <RatingValue>{good}</RatingValue></Rating>
+            <Rating>Neutral: <RatingValue>{neutral}</RatingValue></Rating>
+            <Rating>Bad: <RatingValue>{bad}</RatingValue></Rating>
+            <Rating>Total: <RatingValue>{total}</RatingValue></Rating>
+            <Rating>Positive feedback: <RatingValue>{percentage}%</RatingValue></Rating>            
+       </StatisticContainer>
     )
 }
 

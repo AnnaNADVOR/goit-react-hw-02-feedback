@@ -1,6 +1,8 @@
-function Notification({message}) {
+import { Message } from "./Notification.styled";
+
+function Notification({ message }) {
     return (
-        <p>{ message}</p>
+        <Message>{message}</Message >
     )
 }
 

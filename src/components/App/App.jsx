@@ -1,13 +1,12 @@
 import { Component } from "react";
 
-import Section from "./Feedback/Section/Section";
-import Statistics from "./Feedback/Statistics/Statistics";
-import FeedbackOptions from "./Feedback/FeedbackOptions/FeedbackOptions";
-import Notification from "./Feedback/Notification/Notification";
-
+import Section from "../Feedback/Section/Section";
+import Statistics from "../Feedback/Statistics/Statistics";
+import FeedbackOptions from "../Feedback/FeedbackOptions/FeedbackOptions";
+import Notification from "../Feedback/Notification/Notification";
+import { Container } from "./App.styled";
 
 class App extends Component {
-
   state = {
     good: 0,
     neutral: 0,
@@ -41,25 +40,14 @@ class App extends Component {
   }
 
   render() {
-    
     return (
-      <div>
-      {/* style={{
-        height: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}> */}
-       
-      <Section title="Please Leave Feedback">
+      <Container>           
+        <Section title="Please Leave Feedback">
           <FeedbackOptions
             options={Object.keys(this.state)}
             onLeaveFeedback={this.onLeaveFeedback}
           />            
-      </Section> 
+        </Section> 
         <Section title="Statistics">
           {this.countTotalFeedback() > 0 ? (
             <Statistics
@@ -71,9 +59,8 @@ class App extends Component {
             />) :
             (<Notification message="There is no feedback" />)
           }          
-      </Section>  
-  
-    </div>
+        </Section>  
+      </Container>
     )
   }
 
