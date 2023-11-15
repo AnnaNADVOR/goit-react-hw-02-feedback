@@ -6,4 +6,5 @@ export const SectionContainer = styled.section `
 
 export const SectionTitle = styled.h1 `
     margin-bottom: 20px;
+    
 `

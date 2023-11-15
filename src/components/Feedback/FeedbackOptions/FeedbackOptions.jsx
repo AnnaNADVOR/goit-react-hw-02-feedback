@@ -1,17 +1,21 @@
 import getIconByType from "utils";
 import { ButtonList, Button, ButtonItem, OptionLabel } from "./FeedbackOptions.styled";
+
     
 function FeedbackOptions({ options, onLeaveFeedback }) {
-    return (
+    
+      return (
         < ButtonList>
             {options.map(option => {
                 return (
-                  <ButtonItem key={option}>
-                        <Button
-                            onClick={onLeaveFeedback} type="button"
+                    <ButtonItem key={option}>
+                     
+                         <Button type="button"
+                            onClick={onLeaveFeedback} 
                             id={option}>
                             {getIconByType(option)}
-                        </Button> 
+                        </Button>  
+
                         <OptionLabel labelType={option}>{option}</OptionLabel>
                   </ButtonItem>                       
                 )

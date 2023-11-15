@@ -5,7 +5,7 @@ export const Container = styled.div`
     flex-direction: column;
     justify-content: center;
     padding: 0 30px; 
-    font-size: 30px;
+    font-size: 20px;
     color: ${({theme}) => theme.colors.primaryBlack};
     letter-spacing: .03em;
 `
